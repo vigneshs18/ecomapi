@@ -10,14 +10,18 @@
   "author": "monuv009@hotmail.co.uk",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.5",
     "nodemon": "^2.0.2"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.3",
+    "@types/jsonwebtoken": "^8.3.8",
     "@types/mongoose": "^5.7.6",
     "typescript": "^3.8.3"
   }
