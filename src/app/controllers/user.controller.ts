@@ -85,7 +85,7 @@ export class UserController {
                 );
             } else {
                 res.status(200).json(
-                    { status: 'success', message: 'Profile fetched', data: result }
+                    { status: 'success', message: 'Profile found', data: result }
                 );
             }
         });
