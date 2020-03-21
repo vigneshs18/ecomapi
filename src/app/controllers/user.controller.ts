@@ -50,7 +50,7 @@ export class UserController {
                     { status: 'failed', message: err }
                 );
             } else {
-                res.status(200).json(
+                res.status(201).json(
                     { status: 'success', message: 'Registration Successful', data : result }
                 );
             }

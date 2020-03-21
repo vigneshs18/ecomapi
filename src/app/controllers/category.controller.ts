@@ -26,7 +26,7 @@ export class CategoryController {
                     { status: 'failed', message: err }
                 );
             } else {
-                res.status(200).json(
+                res.status(201).json(
                     { status: 'success', message: 'Categories added', data: result }
                 );
             }
