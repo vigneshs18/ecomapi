@@ -16,7 +16,7 @@ export class UserController {
                 );
             } else {
                 // for result case
-                if(result != undefined) { 
+                if(result != undefined) {
                     // for email found case
                     // != wiil take care of both 'null' & 'undefined' values
                      if(compareSync(req.body.password, result.password)) {
@@ -24,17 +24,17 @@ export class UserController {
                         // generating a token for succesful login
                         const token = sign({ id: result._id }, private_key, { expiresIn: '1h' });
                         res.status(200).json(
-                            { status: 'success', message: 'login success', data: token }
+                            { status: 'success', message: 'login success', data: token, role: result.role }
                         );
                     } else {
                         // for incorrect password case
-                        res.status(401).json(
+                        res.json(
                             { status: 'failed', message: 'Incorrect password' }
                         );
                     }
                 } else {
                     // for email not found case
-                    res.status(404).json(
+                    res.json(
                         { status: 'failed', message: 'Email not found' }
                     );
                 }
