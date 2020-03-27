@@ -6,7 +6,8 @@ import { MongoConnect } from './db/db';
 import { 
     userRoutes,
     categoryRoutes,
-    productRoutes
+    productRoutes,
+    errorLogRoutes
 } from './routes/index';
 
 dotenv.config();
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 app.use('/user', userRoutes);
 app.use('/category', categoryRoutes);
 app.use('/product', productRoutes);
+app.use('/errorLog', errorLogRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
     MongoConnect.connect().then(res => console.log('MongoDB Atlas Connected'));
