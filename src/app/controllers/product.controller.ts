@@ -59,7 +59,7 @@ export class ProductController {
     }
 
     static addProduct(req: Request, res: Response, next: NextFunction) {
-        req.body.imageUrl = process.env.IMAGE_BASE_PATH + req.file.originalname;
+        req.body.imageUrl = process.env.IMAGE_BASE_PATH + 'product/' + req.file.originalname;
         const product = new Product(req.body);
         Product.create(product, (err: Errback, result: any) => {
             if(err) {
