@@ -7,7 +7,9 @@ import {
     userRoutes,
     categoryRoutes,
     productRoutes,
-    errorLogRoutes
+    errorLogRoutes,
+    wishListRoutes,
+    cartRoutes
 } from './routes/index';
 
 dotenv.config();
@@ -30,6 +32,8 @@ app.use('/user', userRoutes);
 app.use('/category', categoryRoutes);
 app.use('/product', productRoutes);
 app.use('/errorLog', errorLogRoutes);
+app.use('/wishlist', wishListRoutes);
+app.use('/cart', cartRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
     MongoConnect.connect().then(res => console.log('MongoDB Atlas Connected'));
