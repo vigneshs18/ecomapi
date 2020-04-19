@@ -1,6 +1,7 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 import { MongoConnect } from './db/db';
 import { 
@@ -9,7 +10,8 @@ import {
     productRoutes,
     errorLogRoutes,
     wishListRoutes,
-    cartRoutes
+    cartRoutes,
+    orderRoutes
 } from './routes/index';
 
 dotenv.config();
@@ -28,12 +30,14 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
 app.use('/user', userRoutes);
 app.use('/category', categoryRoutes);
 app.use('/product', productRoutes);
 app.use('/errorLog', errorLogRoutes);
 app.use('/wishlist', wishListRoutes);
 app.use('/cart', cartRoutes);
+app.use('/order', orderRoutes);
 
 app.listen(process.env.PORT || 3000, () => {
     MongoConnect.connect().then(res => console.log('MongoDB Atlas Connected'));
